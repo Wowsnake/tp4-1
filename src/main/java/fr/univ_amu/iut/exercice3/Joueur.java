@@ -1,56 +1,49 @@
 package fr.univ_amu.iut.exercice3;
 
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.image.Image;
 
-public enum Joueur {
-    NOIR("assets/noirgrand.png"),
-    BLANC("assets/blancgrand.png"),
-    PERSONNE("assets/vide.png");
+public class Joueur {
+    public static final Joueur NOIR = new Joueur("assets/noirgrand.png");
+    public static final Joueur BLANC = new Joueur("assets/blancgrand.png");
+    public static final Joueur PERSONNE = new Joueur("assets/vide.png");
 
-    private final Image image;
+    private Image image;
     private IntegerProperty score;
 
     Joueur(String fileName) {
-        image = new Image(getClass().getClassLoader().getResource(fileName).toExternalForm());
-        score = new SimpleIntegerProperty();
+        throw new RuntimeException("Not yet implemented !");
     }
 
     public static void initialiserScores() {
-        BLANC.initialiserScore();
-        NOIR.initialiserScore();
+        throw new RuntimeException("Not yet implemented !");
     }
 
     public IntegerProperty scoreProperty() {
-        return score;
+        throw new RuntimeException("Not yet implemented !");
     }
 
     private void initialiserScore() {
-        score.set(0);
+        throw new RuntimeException("Not yet implemented !");
     }
 
     public int getScore() {
-        return score.get();
+        throw new RuntimeException("Not yet implemented !");
     }
 
     public void decrementerScore() {
-        score.set(score.get() - 1);
+        throw new RuntimeException("Not yet implemented !");
     }
 
     public void incrementerScore() {
-        score.set(score.get() - 1);
+        throw new RuntimeException("Not yet implemented !");
     }
 
     public Image getImage() {
-        return image;
+        throw new RuntimeException("Not yet implemented !");
     }
 
     public Joueur suivant() {
-        if (this == BLANC)
-            return NOIR;
-        if (this == NOIR)
-            return BLANC;
-        return PERSONNE;
+        throw new RuntimeException("Not yet implemented !");
     }
 }
