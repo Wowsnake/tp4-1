@@ -457,7 +457,7 @@ On notera qu'une unique instance de cette classe doit être ajoutée comme audit
 capturables si le `joueurCourant` dépose un jeton sur la case `caseSelectionnee`. Cette méthode vérifie dans toute 
 les directions quel est l'ensemble des cases capturables.
 
-#### Exercice 5 : Implémentation de la classe `OthelloController`
+#### Étape 5 : Implémentation de la classe `OthelloController`
 La classe `OthelloController` et le fichier FXML `OthelloView` représentent le contenu de la fenêtre principale du Jeu. 
 En plus d'un othellier situé au centre, cette scène contient une barre de menu et une barre de statut en bas. La barre 
 de menu contient un menu "Action" constitué d'une entrée "Nouvelle Partie" et d'une entrée "Quitter".
@@ -503,7 +503,7 @@ l'utilisateur ne valide pas, l'événement sera consommé (`event.consume()`) po
 la partie courante. Pour cela, vous utiliserez la classe `Alert` avec un titre et un contenu adapté. Le dialogue sera 
 affiché et attendra que l'utilisateur le ferme.
 
-#### Exercice 6 : Implémentation de la classe `OthelloMain`
+#### Étape 6 : Implémentation de la classe `OthelloMain`
 La classe `OthelloMain` est le programme principal de notre application. C'est elle qui a la responsabilité de 
 charger la vue principale et de l'ajouter à la scène.
 
