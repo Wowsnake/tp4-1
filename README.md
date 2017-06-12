@@ -24,7 +24,7 @@ La première chose que vous allez faire est de créer un fork d'un dépôt. Pour
 
 [https://classroom.github.com/assignment-invitations/9db9e745a277f9d5cac3caf4a973564b](https://classroom.github.com/assignment-invitations/9db9e745a277f9d5cac3caf4a973564b) 
 
-Comme pour le TP1, GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-m2105/tp3' et s'appellant 'IUTInfoAix-m2105/tp4-votreUsername'. 
+Comme pour le TP1, GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-m2105/tp4' et s'appellant 'IUTInfoAix-m2105/tp4-votreUsername'. 
 Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser votre travail.
 
 Une fois votre fork créé, il vous suffit de l'importer dans IntelliJ.
@@ -53,8 +53,7 @@ Une fois chargés, les nœuds issus de fichiers FXML sont totalement équivalent
 opérations et manipulations peuvent leur être appliquées.
 
 Même si certaines possibilités existent (en lien notamment avec du code JavaScript) on conseille généralement d'utiliser 
-les fichiers FXML exclusivement pour décrire les interfaces, et d'effectuer tous les traitements (activité des contrôleurs) d
-ans le code Java.
+les fichiers FXML exclusivement pour décrire les interfaces, et d'effectuer tous les traitements (activité des contrôleurs) dans le code Java.
 
 
 Lors du chargement du fichier FXML, son contenu est interprété et des objets Java correspondants sont créés.
@@ -187,7 +186,7 @@ lui communiquer la référence du modèle de l'application
 
 - Rajouter un second bouton pour décrémenter la valeur de la propriété `counter`.
 
-- En cliquant dans l'onglet *Scene Buider* en bas de l'éditeur FXML, personnalisez l'affichage de votre fenêtre en 
+- En cliquant dans l'onglet *Scene Builder* en bas de l'éditeur FXML, personnalisez l'affichage de votre fenêtre en 
 changeant la couleur de fond et la taille de la police des différents boutons.
 
 ### Exercice 2 : Création d'un composant personnalisé en FXML
