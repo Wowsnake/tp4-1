@@ -353,7 +353,7 @@ caractéristiques suivantes :
 - Elle contient aussi une donnée membre privée de type `Joueur` appelée `possesseur`.
 
 - Elle a un unique constructeur qui prend deux arguments (ligne, colonne) et les mémorise dans les variables d’instance 
-correspondantes. Par défaut, une case n'appartient à PERSONNE.
+correspondantes. Par défaut, une case n'appartient à PERSONNE. On propose un côté de 50 par case. Attention, les images fournies à attacher à la case pour y dessiner le jeton ne sont pas de la même taille.
 
 - Elle possède trois getters :  `public Joueur getPossesseur()`, `public int getLigne()` et  `public int getColonne()`.
 
