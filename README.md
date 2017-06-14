@@ -209,7 +209,7 @@ Les propriétés exposées par le composant devront posséder des accesseurs pub
 
 - Lancer la classe `LoginMain` pour observer et comprendre le fonctionnement du chargement d'une IHM décrite en FXML.
 
-- Ajouter une feuille de style pour personnaliser l'affichage de votre composant.
+- Ajouter la feuille de style `Login.css` (disponible comme ressource) pour personnaliser l'affichage de votre composant.
 
 ### Exercice 3 : Reversi
 
