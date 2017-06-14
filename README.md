@@ -401,40 +401,44 @@ Cette classe est celle qui permet d'implémenter toute la logique du jeu.
 3. Écrire la méthode `private void positionnerPionsDebutPartie()` qui place dans les cases adéquates les deux 
 pions `BLANC` et les deux pions `NOIR` du début de partie. Il faudra veiller à incrémenter les scores de chacun des joueurs.
 
-4. Écrire le constructeur public de la classe `Othellier` qui prendra en paramètre la taille de la matrice de jeu. 
+4. Écrire la méthode `public void nouvellePartie()` qui initialise le joueur courant, les scores, vide l'othellier et positionne les pions en début de partie.
+
+5. Écrire le constructeur public de la classe `Othellier` qui prendra en paramètre la taille de la matrice de jeu. 
 Ce constructeur devra :
     - mémoriser le paramètre taille dans la donnée membre correspondante.
     
     - créer la matrice `cases` avec `taille` lignes et `taille` colonnes.
      
-    - créer toutes les cases de la matrice et les ajouter à l'othellier.
+    - créer toutes les cases de la matrice et les ajouter à l'othellier à l'aide de `remplirOthelier()`.
+    
+    - appeler `adapterLesLignesEtColonnes()` afin de fixer des contraintes sur la grille.
     
     - vider l'othellier.
     
     - positionner les pions dans leur configuration initiale.
     
-5. Supposons que l'on dispose d'une méthode `private List<Case> casesCapturables(Case caseSelectionnee)` qui permet de 
+6. Supposons que l'on dispose d'une méthode `private List<Case> casesCapturables(Case caseSelectionnee)` qui permet de 
 connaître la liste des cases capturables si le `joueurCourant` dépose un jeton sur la case `caseSelectionnee`. Écrire la 
 méthode `boolean estPositionJouable(Case caseSelectionnee)` qui permet de savoir si le `joueurCourant` a le droit de déposer 
 un jeton sur la case `caseSelectionnee`. Une position est jouable si la case est vide et si l'on capture au moins un pion 
 adverse.
 
-6. Écrire la méthode `private List<Case> casesJouables()` qui retourne la liste de toutes les cases jouables par 
+7. Écrire la méthode `private List<Case> casesJouables()` qui retourne la liste de toutes les cases jouables par 
 le `joueurCourant`. Pour ce faire, vous pouvez parcourir toutes les cases vides (celles qui n'appartiennent à `PERSONNE`) 
 et les ajouter au résultat si elles sont jouables.
 
-7. Écrire la méthode `public boolean peutJouer()` qui retourne `true` s'il existe une position où le `joueurCourant` 
+8. Écrire la méthode `public boolean peutJouer()` qui retourne `true` s'il existe une position où le `joueurCourant` 
 peut poser son pion.
 
-8. Écrire la méthode `private void tourSuivant()` qui affecte à `joueurCourant` le prochain joueur qui doit jouer. 
+9. Écrire la méthode `private void tourSuivant()` qui affecte à `joueurCourant` le prochain joueur qui doit jouer. 
 Si aucun des deux joueurs ne peut jouer, la partie est terminée et la donnée membre `joueurCourant` est positionnée 
 à `PERSONNE`.
 
-9. Écrire la méthode `private void capturer(Case caseCapturee)` qui capture la case `caseCapturee` et retourne 
+10. Écrire la méthode `private void capturer(Case caseCapturee)` qui capture la case `caseCapturee` et retourne 
 toute les cases capturables à partir de cette case. Cette méthode s'occupe aussi d'incrémenter et de décrémenter 
 le score de chaque joueur pour maintenir le score à jour.
 
-10. On s’intéresse maintenant à ce qui doit se passer lorsqu’un joueur appuie sur un bouton. Pour cela, vous allez écrire 
+11. On s’intéresse maintenant à ce qui doit se passer lorsqu’un joueur appuie sur un bouton. Pour cela, vous allez écrire 
 une classe implémentant l’interface `EventHandler<ActionEvent>`. Cette classe aura une unique instance utilisée comme auditeur de 
 tous les « événements action » produits par les boutons du jeu.
 
@@ -452,9 +456,13 @@ Cette classe se réduit à la méthode imposée `public void handle(ActionEvent 
     
 On notera qu'une unique instance de cette classe doit être ajoutée comme auditeur de toutes les cases.
 
-11. Écrire la méthode `private List<Case> casesCapturables(Case caseSelectionnee)` qui retourne la liste des cases 
+12. Écrire la méthode `public ObjectProperty<Joueur> joueurCourantProperty()` qui retourne la propriété correspondante.
+
+13. Écrire la méthode `private boolean estIndicesValides()` qui utilise `estIndiceValide()` et retourne vrai si la cellule correspondant à la ligne et colonne donnés en paramètre a un indice valide.
+
+14. Écrire la méthode `private List<Case> casesCapturables(Case caseSelectionnee)` qui retourne la liste des cases 
 capturables si le `joueurCourant` dépose un jeton sur la case `caseSelectionnee`. Cette méthode vérifie dans toute 
-les directions quel est l'ensemble des cases capturables.
+les directions quel est l'ensemble des cases capturables. On pourrait utiliser la méthode `estIndicesValides()` précédente.
 
 #### Étape 5 : Implémentation de la classe `OthelloController`
 La classe `OthelloController` et le fichier FXML `OthelloView` représentent le contenu de la fenêtre principale du Jeu. 
