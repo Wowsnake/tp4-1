@@ -199,7 +199,7 @@ personnalisé et une IHM quelconque en FXML se situe au niveau de nœud principa
 `<fx:root>` dans ce nœud, il devra indiquer le type de cette racine et ne surtout pas préciser le controleur.
 
 Dans le code du composant, notre composant devra étendre le type indiqué dans le nœud `<fx:root>`. Le chargement du 
-FMXL interviendra directement dans le constructeur par défaut. Il faudra préciser à ce moment là que l'objet courant 
+FXML interviendra directement dans le constructeur par défaut. Il faudra préciser à ce moment là que l'objet courant 
 sera à la fois la racine (`setRoot()`) et le contrôleur (`setController()`) de la vue FXML.
 
 Les propriétés exposées par le composant devront posséder des accesseurs publiques.
@@ -438,9 +438,7 @@ Si aucun des deux joueurs ne peut jouer, la partie est terminée et la donnée m
 toute les cases capturables à partir de cette case. Cette méthode s'occupe aussi d'incrémenter et de décrémenter 
 le score de chaque joueur pour maintenir le score à jour.
 
-11. On s’intéresse maintenant à ce qui doit se passer lorsqu’un joueur appuie sur un bouton. Pour cela, vous allez écrire 
-une classe implémentant l’interface `EventHandler<ActionEvent>`. Cette classe aura une unique instance utilisée comme auditeur de 
-tous les « événements action » produits par les boutons du jeu.
+11. On s’intéresse maintenant à ce qui doit se passer lorsqu’un joueur appuie sur un bouton. Pour cela, avec une expression lambda, vous allez écrire une classe implémentant l’interface `EventHandler<ActionEvent>`. On conservera une seule instance utilisée comme auditeur de tous les « événements action » produits par les boutons du jeu dans la donnée membre `caseListener`.
 
 Écrivez une classe `AuditeurCase`, interne à la classe `Othellier`, implémentant l’interface `EventHandler<ActionEvent>`. 
 
@@ -460,9 +458,8 @@ On notera qu'une unique instance de cette classe doit être ajoutée comme audit
 
 13. Écrire la méthode `private boolean estIndicesValides()` qui utilise `estIndiceValide()` et retourne vrai si la cellule correspondant à la ligne et colonne donnés en paramètre a un indice valide.
 
-14. Écrire la méthode `private List<Case> casesCapturables(Case caseSelectionnee)` qui retourne la liste des cases 
-capturables si le `joueurCourant` dépose un jeton sur la case `caseSelectionnee`. Cette méthode vérifie dans toute 
-les directions quel est l'ensemble des cases capturables. On pourrait utiliser la méthode `estIndicesValides()` précédente.
+14. La méthode `private List<Case> casesCapturables(Case caseSelectionnee)` qui retourne la liste des cases 
+capturables si le `joueurCourant` dépose un jeton sur la case `caseSelectionnee` vous est donnée. Cette méthode vérifie dans toute les directions quel est l'ensemble des cases capturables. Elle utilise la méthode `estIndicesValides()` précédente.
 
 #### Étape 5 : Implémentation de la classe `OthelloController`
 La classe `OthelloController` et le fichier FXML `OthelloView` représentent le contenu de la fenêtre principale du Jeu. 
