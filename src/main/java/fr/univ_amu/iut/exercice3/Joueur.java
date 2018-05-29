@@ -19,15 +19,19 @@ public class Joueur {
         throw new RuntimeException("Not yet implemented !");
     }
 
+    private void initialiserScore() {
+        throw new RuntimeException("Not yet implemented !");
+    }
+    
     public IntegerProperty scoreProperty() {
         throw new RuntimeException("Not yet implemented !");
     }
 
-    private void initialiserScore() {
+    public int getScore() {
         throw new RuntimeException("Not yet implemented !");
     }
-
-    public int getScore() {
+    
+    private setScore(int score) {
         throw new RuntimeException("Not yet implemented !");
     }
 
