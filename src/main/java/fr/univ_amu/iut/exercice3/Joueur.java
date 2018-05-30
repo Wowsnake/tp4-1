@@ -31,7 +31,7 @@ public class Joueur {
         throw new RuntimeException("Not yet implemented !");
     }
     
-    private setScore(int score) {
+    private void setScore(int score) {
         throw new RuntimeException("Not yet implemented !");
     }
 
