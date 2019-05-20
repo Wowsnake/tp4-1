@@ -44,5 +44,6 @@ public class CounterController implements Initializable {
         System.out.println("Initializing SayHelloController...");
         System.out.println("Location = " + location);
         System.out.println("Resources = " + resources);
+        counterLabel.textProperty().bind(counter.asString());
     }
 }

@@ -30,8 +30,9 @@ public class LoginControl extends GridPane {
     }
 
     @FXML
-    private void initialize() {
-
+    private void initialize()
+    {
+        getStylesheets().add(getClass().getClassLoader().getResource("fr/univ_amu/iut/exercice2/Login.css").toExternalForm());
     }
 
     @FXML
