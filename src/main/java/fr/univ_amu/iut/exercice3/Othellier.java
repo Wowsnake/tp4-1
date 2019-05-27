@@ -28,22 +28,19 @@ public class Othellier extends GridPane {
             new Point2D(1, -1)
     };
     private final EventHandler<ActionEvent> caseListener = event -> {
-        throw new RuntimeException("Not yet implemented !");
     };
     private int taille;
     private Case[][] cases;
     private ObjectProperty<Joueur> joueurCourant = new SimpleObjectProperty<>(Joueur.NOIR);
 
     public Othellier() {
-        throw new RuntimeException("Not yet implemented !");
+
     }
 
     public ObjectProperty<Joueur> joueurCourantProperty() {
-        throw new RuntimeException("Not yet implemented !");
     }
 
     private void remplirOthelier(int taille) {
-        throw new RuntimeException("Not yet implemented !");
     }
 
     private void adapterLesLignesEtColonnes() {
@@ -61,20 +58,27 @@ public class Othellier extends GridPane {
     }
 
     private void positionnerPionsDebutPartie() {
-        throw new RuntimeException("Not yet implemented !");
+        cases[taille/2-1] [taille/2-1].setPossesseur(Joueur.BLANC);
+        Joueur.BLANC.incrementerScore();
+        cases[taille/2-1] [taille/2].setPossesseur(Joueur.NOIR);
+        Joueur.NOIR.incrementerScore();
+        cases[taille/2] [taille/2-1].setPossesseur(Joueur.NOIR);
+        Joueur.NOIR.incrementerScore();
+        cases[taille/2] [taille/2].setPossesseur(Joueur.BLANC);
+        Joueur.BLANC.incrementerScore();
     }
 
 
     public void nouvellePartie() {
-        throw new RuntimeException("Not yet implemented !");
+        joueurCourant.set(Joueur.NOIR);
+        vider();
+        positionnerPionsDebutPartie();
     }
 
     private boolean peutJouer() {
-        throw new RuntimeException("Not yet implemented !");
     }
 
     private List<Case> casesJouables() {
-        throw new RuntimeException("Not yet implemented !");
     }
 
     private List<Case> casesCapturable(Case caseSelectionnee) {
@@ -110,30 +114,30 @@ public class Othellier extends GridPane {
     }
 
     private boolean estIndicesValides(int indiceLigne, int indiceColonne) {
-        throw new RuntimeException("Not yet implemented !");
     }
 
     private boolean estIndiceValide(int indiceColonne) {
-        throw new RuntimeException("Not yet implemented !");
     }
 
     private boolean estPositionJouable(Case caseSelectionnee) {
-        throw new RuntimeException("Not yet implemented !");
     }
 
     private void capturer(Case caseCapturee) {
-        throw new RuntimeException("Not yet implemented !");
     }
 
     public Joueur getJoueurCourant() {
-        throw new RuntimeException("Not yet implemented !");
     }
 
     private void tourSuivant() {
-        throw new RuntimeException("Not yet implemented !");
     }
 
     private void vider() {
-        throw new RuntimeException("Not yet implemented !");
+        for (int i = 0; i < taille; i++){
+            for (int j = 0; j < taille; j++){
+                cases[i][j].setPossesseur(Joueur.PERSONNE);
+            }
+        }
+        Joueur.BLANC.scoreProperty().set(0);
+        Joueur.NOIR.scoreProperty().set(0);
     }
 }
